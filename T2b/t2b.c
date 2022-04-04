@@ -35,8 +35,7 @@ char cprt(char c); /* If c is a number between 0x41 and 0x7a, cprt prints the ch
                     the value of c unchanged. */
 char my_get(char c){
     return fgetc(stdin);
-}
-/* Ignores c, reads and returns a character from stdin using fgetc. */
+}/* Ignores c, reads and returns a character from stdin using fgetc. */
 
 int main(int argc, char **argv) {
     /* TODO: Test your code */
