@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.21)
+project(LAB2 C)
+
+set(CMAKE_C_STANDARD 99)
+add_executable(task0 task0/count-words.c)
+add_executable(t1a T1a/addresses.c T1d/t1d.c T2a/t2a.c T2b/t2b.c)
+add_executable(t1c T1c/t1c.c)
+add_executable(t1d T1d/t1d.c)
+add_executable(t2a T2a/t2a.c)
+add_executable(t2b T2b/t2b.c)

@@ -1,0 +1,8 @@
+/home/spl211/CLionProjects/LAB2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/spl211/CLionProjects/LAB2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/spl211/CLionProjects/LAB2/cmake-build-debug/CMakeFiles/t2b.dir
+/home/spl211/CLionProjects/LAB2/cmake-build-debug/CMakeFiles/t2a.dir
+/home/spl211/CLionProjects/LAB2/cmake-build-debug/CMakeFiles/t1d.dir
+/home/spl211/CLionProjects/LAB2/cmake-build-debug/CMakeFiles/task0.dir
+/home/spl211/CLionProjects/LAB2/cmake-build-debug/CMakeFiles/t1a.dir
+/home/spl211/CLionProjects/LAB2/cmake-build-debug/CMakeFiles/t1c.dir
