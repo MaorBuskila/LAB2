@@ -42,6 +42,17 @@ include CMakeFiles/rules.ninja
 cmake_ninja_workdir = /home/spl211/CLionProjects/LAB2/cmake-build-debug/
 
 #############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/spl211/CLionProjects/LAB2/cmake-build-debug && /snap/clion/184/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
@@ -52,16 +63,36 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
+# =============================================================================
+# Object build statements for EXECUTABLE target t2c
+
 
 #############################################
-# Utility command for edit_cache
+# Order-only phony target for t2c
 
-build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/spl211/CLionProjects/LAB2/cmake-build-debug && /snap/clion/184/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
+build cmake_object_order_depends_target_t2c: phony || CMakeFiles/t2c.dir
 
-build edit_cache: phony CMakeFiles/edit_cache.util
+build CMakeFiles/t2c.dir/T2c/t2c.c.o: C_COMPILER__t2c_Debug /home/spl211/CLionProjects/LAB2/T2c/t2c.c || cmake_object_order_depends_target_t2c
+  DEP_FILE = CMakeFiles/t2c.dir/T2c/t2c.c.o.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles/t2c.dir
+  OBJECT_FILE_DIR = CMakeFiles/t2c.dir/T2c
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target t2c
+
+
+#############################################
+# Link the executable t2c
+
+build t2c: C_EXECUTABLE_LINKER__t2c_Debug CMakeFiles/t2c.dir/T2c/t2c.c.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/t2c.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = t2c
+  TARGET_PDB = t2c.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target t2b
@@ -124,6 +155,37 @@ build t2a: C_EXECUTABLE_LINKER__t2a_Debug CMakeFiles/t2a.dir/T2a/t2a.c.o
   PRE_LINK = :
   TARGET_FILE = t2a
   TARGET_PDB = t2a.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target t3
+
+
+#############################################
+# Order-only phony target for t3
+
+build cmake_object_order_depends_target_t3: phony || CMakeFiles/t3.dir
+
+build CMakeFiles/t3.dir/T3/menu.c.o: C_COMPILER__t3_Debug /home/spl211/CLionProjects/LAB2/T3/menu.c || cmake_object_order_depends_target_t3
+  DEP_FILE = CMakeFiles/t3.dir/T3/menu.c.o.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles/t3.dir
+  OBJECT_FILE_DIR = CMakeFiles/t3.dir/T3
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target t3
+
+
+#############################################
+# Link the executable t3
+
+build t3: C_EXECUTABLE_LINKER__t3_Debug CMakeFiles/t3.dir/T3/menu.c.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/t3.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = t3
+  TARGET_PDB = t3.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target t1d
@@ -220,6 +282,12 @@ build CMakeFiles/t1a.dir/T2b/t2b.c.o: C_COMPILER__t1a_Debug /home/spl211/CLionPr
   OBJECT_DIR = CMakeFiles/t1a.dir
   OBJECT_FILE_DIR = CMakeFiles/t1a.dir/T2b
 
+build CMakeFiles/t1a.dir/T2c/t2c.c.o: C_COMPILER__t1a_Debug /home/spl211/CLionProjects/LAB2/T2c/t2c.c || cmake_object_order_depends_target_t1a
+  DEP_FILE = CMakeFiles/t1a.dir/T2c/t2c.c.o.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles/t1a.dir
+  OBJECT_FILE_DIR = CMakeFiles/t1a.dir/T2c
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target t1a
@@ -228,7 +296,7 @@ build CMakeFiles/t1a.dir/T2b/t2b.c.o: C_COMPILER__t1a_Debug /home/spl211/CLionPr
 #############################################
 # Link the executable t1a
 
-build t1a: C_EXECUTABLE_LINKER__t1a_Debug CMakeFiles/t1a.dir/T1a/addresses.c.o CMakeFiles/t1a.dir/T1d/t1d.c.o CMakeFiles/t1a.dir/T2a/t2a.c.o CMakeFiles/t1a.dir/T2b/t2b.c.o
+build t1a: C_EXECUTABLE_LINKER__t1a_Debug CMakeFiles/t1a.dir/T1a/addresses.c.o CMakeFiles/t1a.dir/T1d/t1d.c.o CMakeFiles/t1a.dir/T2a/t2a.c.o CMakeFiles/t1a.dir/T2b/t2b.c.o CMakeFiles/t1a.dir/T2c/t2c.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/t1a.dir
   POST_BUILD = :
@@ -278,7 +346,7 @@ build t1c: C_EXECUTABLE_LINKER__t1c_Debug CMakeFiles/t1c.dir/T1c/t1c.c.o
 #############################################
 # Folder: /home/spl211/CLionProjects/LAB2/cmake-build-debug
 
-build all: phony t2b t2a t1d task0 t1a t1c
+build all: phony t2c t2b t2a t3 t1d task0 t1a t1c
 
 # =============================================================================
 # Built-in targets

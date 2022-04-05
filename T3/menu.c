@@ -1,10 +1,9 @@
 //
 // Created by spl211 on 05/04/2022.
 //
+
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
-
 
 char *map(char *array, int array_length, char (*f)(char)) {
     /* TODO: Complete during task 2.a */
@@ -15,6 +14,11 @@ char *map(char *array, int array_length, char (*f)(char)) {
     }
     return mapped_array;
 }
+
+struct fun_desc {
+    char *name;
+    char (*fun)(char);
+};
 
 char censor(char c) {
     if (c == '!')
@@ -65,6 +69,7 @@ char cprt(char c) {
     return c;
 }
 
+
 char my_get(char c) {
     char ch;
     while ((ch = fgetc(stdin)) != EOF) {
@@ -76,49 +81,56 @@ char my_get(char c) {
     return 1;
 }
 
-/* Ignores c, reads and returns a character from stdin using fgetc. */
+char quit(char c) {
+    if (c == 'q')
+        exit(1);
+    else
+        return c;
+} /* Gets a char c,  and if the char is 'q' , ends the program with exit code 0. Otherwise returns c. */
+
+struct fun_desc menu[] = {
+        {"Censor",       censor},
+        {"Encrypt",      encrypt},
+        {"Decrypt",      decrypt},
+        {"Print dec",    dprt},
+        {"Print string", cprt},
+        {"Get string",   my_get},
+        {"Quit",         quit},
+        {NULL, NULL}
+};
+
 
 int main(int argc, char **argv) {
-    /* TODO: Test your code */
-    int base_len = 5;
-    char arr1[base_len];
-    char *arr2 = map(arr1, base_len, my_get);
-    char *arr3 = map(arr2, base_len, encrypt);
-    char* arr4 = map(arr3, base_len, dprt);
-    char* arr5 = map(arr4, base_len, decrypt);
-    char* arr6 = map(arr5, base_len, cprt);
+    char arr[5] = {'\0'};
+    char *carray = arr;
+    char ch;
+    int choise;
+    int i;
+    int readingOptionFlag = 1;
+    while ((ch = fgetc(stdin)) != '6') {
+        if (ch >= '0' && ch <= '6') {
+          if(readingOptionFlag) {
+              fgetc(stdin);
+              readingOptionFlag = 0;
+          }
+            for (i = 0; i < 6; i++) {
+                printf("%d) %s\n", i, menu[i].name);
+            }
+            choise = ch - '0';
+            printf("Option: %c\n", ch);
+            printf("Within bounds\n");
+            fflush(stdin);
+            void (*func_ptr)(char);
+            func_ptr = menu[choise].fun;
+            carray = map(carray, 5, *func_ptr);
+        } else {
+            printf("Not Within bounds\n");
+        }
+        printf("Done.\n");
+        readingOptionFlag =1;
+        fflush(stdin);
 
-//    //Printing arr2
-//    printf("%s\n", "arr2:");
-//    printf("%s\n", arr2);
-//
-//    //Printing arr3
-//    printf("%s\n", "arr3:");
-//    size_t n = strlen(arr3);
-//    for (size_t i = 0; i < n; i++) {
-//        char e = arr3[i];
-//        printf("%d \n", e);
-//    }
-//
-//    //Printing arr4
-//    printf("%s\n", "arr4:");
-//    printf("%s\n", arr4);
-//
-//
-//    //Printing arr5
-//    printf("%s\n", "arr5:");
-//    printf("%s\n", arr5);
-//    for (size_t i = 0; i < base_len; i++) {
-//        char e = arr5[i];
-//        printf("%d \n", e);
-//    }
-//    //Printing arr6
-//    printf("%s\n", "arr6:");
-//    printf("%s\n", arr6);
+    }
 
-    free(arr2);
-    free(arr3);
-    free(arr4);
-    free(arr5);
-    free(arr6);
+
 }
