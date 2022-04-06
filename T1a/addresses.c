@@ -2,8 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-int addr5;
-int addr6;
+int addr5; //uninitialized Data segment, because its global it will be initialized with value 0
+int addr6; //uninitialized Data segment, because its global it will be initialized with value 0
 
 int foo();
 void point_at(void *p);
@@ -13,9 +13,10 @@ void foo2();
 int main (int argc, char** argv){
     int addr2;
     int addr3;
+
     char* yos="ree";
     int * addr4 = (int*)(malloc(50));
-    printf("- &addr2: %p\n",&addr2); //Stack (Refe
+    printf("- &addr2: %p\n",&addr2); //Stack
     printf("- &addr3: %p\n",&addr3); //Stack
     printf("- foo: %p\n",foo); // Look like heap
     printf("- &addr5: %p\n",&addr5); // Look like heap because it is initialized out of the main scope
@@ -62,8 +63,27 @@ void foo1 (){
 void foo2 (){
     printf("foo2\n");
 }
+
+
+//0x77: stack
+
+//0x55:
+// heap
+//uninitialized Data segment
+//initialized Data segment
+//Code segmant
+
+
 //What can you say about the numerical values? Do they obey a particular order?
 //Answer: we can say about the numerical value its allocated the memory by the size of each object takes in the memory in sequence
 
 //Check long data size on your machine using sizeof operator. Is long integer data type enough for dist (address difference) variables
-// Answer: long type is up to 2^32 which is up to −2,147,483,647 we can see (size_t)&local - (size_t)p is  46253991792668 which is far greater than long can be.
+//in OS 32 bit the long is 4 bytes which mean 32 bit so it can be stored up to 2^32 bit = 4GB and this is the excatcly size of the stack and heap
+
+
+
+
+
+
+
+// Answer: long type is up to 2^32 which is up to 2,147,483,647 we can see (size_t)&local - (size_t)p is  46253991792668 which is far greater than long can be.

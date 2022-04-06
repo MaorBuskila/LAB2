@@ -8,8 +8,8 @@
 char *map(char *array, int array_length, char (*f)(char)) {
     /* TODO: Complete during task 2.a */
     char *mapped_array = (char *) (malloc(array_length * sizeof(char)));
-    int i = 0;
-    for (i; i < array_length; ++i) {
+
+    for (int i = 0; i < array_length; ++i) {
         mapped_array[i] = f(array[i]);
     }
     return mapped_array;
@@ -71,14 +71,7 @@ char cprt(char c) {
 
 
 char my_get(char c) {
-    char ch;
-    while ((ch = fgetc(stdin)) != EOF) {
-        if (ch == c)
-            continue;
-        else
-            return ch;
-    }
-    return 1;
+    return fgetc(stdin);
 }
 
 char quit(char c) {
@@ -98,39 +91,43 @@ struct fun_desc menu[] = {
         {"Quit",         quit},
         {NULL, NULL}
 };
+void printMenu(int length) {
+    printf("#> menu \n");
+    printf("Please choose a function: \n");
+    for (int i = 0; i <= length ; i++) {
+        printf("%d) %s\n", i, menu[i].name);
+    }
+    printf("Option: ");
+    fflush(stdin);
 
+}
 
 int main(int argc, char **argv) {
     char arr[5] = {'\0'};
     char *carray = arr;
-    char ch;
-    int choise;
-    int i;
-    int readingOptionFlag = 1;
-    while ((ch = fgetc(stdin)) != '6') {
-        if (ch >= '0' && ch <= '6') {
-          if(readingOptionFlag) {
-              fgetc(stdin);
-              readingOptionFlag = 0;
-          }
-            for (i = 0; i < 6; i++) {
-                printf("%d) %s\n", i, menu[i].name);
-            }
-            choise = ch - '0';
-            printf("Option: %c\n", ch);
+
+
+    int length = (sizeof(menu) - sizeof(struct fun_desc))/ sizeof(struct fun_desc) - 1;
+    while (1) {
+        printMenu(length);
+        int choise;
+        scanf("%d", &choise);
+        fgetc(stdin); // jumping on '\n'
+        if (choise >= 0 && choise <= length) {
+            if (choise == 6) quit('q');
             printf("Within bounds\n");
-            fflush(stdin);
-            void (*func_ptr)(char);
-            func_ptr = menu[choise].fun;
-            carray = map(carray, 5, *func_ptr);
-        } else {
+//            void (*func_ptr)(char);
+//            func_ptr = (void (*)(char)) menu[choise].fun;
+            carray = map(carray, 5, menu[choise].fun);
+          }
+        else {
             printf("Not Within bounds\n");
+            return 0;
         }
         printf("Done.\n");
-        readingOptionFlag =1;
         fflush(stdin);
 
     }
-
+    free (carray);
 
 }

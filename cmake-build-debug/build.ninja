@@ -264,30 +264,6 @@ build CMakeFiles/t1a.dir/T1a/addresses.c.o: C_COMPILER__t1a_Debug /home/spl211/C
   OBJECT_DIR = CMakeFiles/t1a.dir
   OBJECT_FILE_DIR = CMakeFiles/t1a.dir/T1a
 
-build CMakeFiles/t1a.dir/T1d/t1d.c.o: C_COMPILER__t1a_Debug /home/spl211/CLionProjects/LAB2/T1d/t1d.c || cmake_object_order_depends_target_t1a
-  DEP_FILE = CMakeFiles/t1a.dir/T1d/t1d.c.o.d
-  FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles/t1a.dir
-  OBJECT_FILE_DIR = CMakeFiles/t1a.dir/T1d
-
-build CMakeFiles/t1a.dir/T2a/t2a.c.o: C_COMPILER__t1a_Debug /home/spl211/CLionProjects/LAB2/T2a/t2a.c || cmake_object_order_depends_target_t1a
-  DEP_FILE = CMakeFiles/t1a.dir/T2a/t2a.c.o.d
-  FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles/t1a.dir
-  OBJECT_FILE_DIR = CMakeFiles/t1a.dir/T2a
-
-build CMakeFiles/t1a.dir/T2b/t2b.c.o: C_COMPILER__t1a_Debug /home/spl211/CLionProjects/LAB2/T2b/t2b.c || cmake_object_order_depends_target_t1a
-  DEP_FILE = CMakeFiles/t1a.dir/T2b/t2b.c.o.d
-  FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles/t1a.dir
-  OBJECT_FILE_DIR = CMakeFiles/t1a.dir/T2b
-
-build CMakeFiles/t1a.dir/T2c/t2c.c.o: C_COMPILER__t1a_Debug /home/spl211/CLionProjects/LAB2/T2c/t2c.c || cmake_object_order_depends_target_t1a
-  DEP_FILE = CMakeFiles/t1a.dir/T2c/t2c.c.o.d
-  FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles/t1a.dir
-  OBJECT_FILE_DIR = CMakeFiles/t1a.dir/T2c
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target t1a
@@ -296,7 +272,7 @@ build CMakeFiles/t1a.dir/T2c/t2c.c.o: C_COMPILER__t1a_Debug /home/spl211/CLionPr
 #############################################
 # Link the executable t1a
 
-build t1a: C_EXECUTABLE_LINKER__t1a_Debug CMakeFiles/t1a.dir/T1a/addresses.c.o CMakeFiles/t1a.dir/T1d/t1d.c.o CMakeFiles/t1a.dir/T2a/t2a.c.o CMakeFiles/t1a.dir/T2b/t2b.c.o CMakeFiles/t1a.dir/T2c/t2c.c.o
+build t1a: C_EXECUTABLE_LINKER__t1a_Debug CMakeFiles/t1a.dir/T1a/addresses.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/t1a.dir
   POST_BUILD = :
