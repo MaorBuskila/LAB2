@@ -1,0 +1,123 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "LAB2",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "t1a::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-t1a-Debug-b1e27b35ec445c9608a4.json",
+					"name" : "t1a",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "t1c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-t1c-Debug-3c3672f9d02f8f8a9a3c.json",
+					"name" : "t1c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "t1d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-t1d-Debug-7e07a4806420ff8254fd.json",
+					"name" : "t1d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "t2a::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-t2a-Debug-a82b04079edca75813a8.json",
+					"name" : "t2a",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "t2b::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-t2b-Debug-c079b18c9398acc9f894.json",
+					"name" : "t2b",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "t2c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-t2c-Debug-dc981a204b14ac550895.json",
+					"name" : "t2c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "t3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-t3-Debug-b10b00891b6aa349a073.json",
+					"name" : "t3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "task0::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-task0-Debug-e60fd51efe4f6b3e67dc.json",
+					"name" : "task0",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/spl211/CLionProjects/LAB2/cmake-build-debug",
+		"source" : "/home/spl211/CLionProjects/LAB2"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
