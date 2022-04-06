@@ -1,10 +1,10 @@
-all: hello
+all: exec
 
-hello: t1c.o
-	@echo 'Building target: hello'
+exec: t1c.o
+	@echo 'Building target: exec'
 	@echo 'Invoking: C Linker'
 	gcc -g -Wall -o hello  t1c.o
-	@echo 'Finished building target: hello'
+	@echo 'Finished building target: exec'
 	@echo ' '
 
 t1c.o: t1c.c
@@ -13,4 +13,4 @@ t1c.o: t1c.c
 
 .PHONY: clean
 clean:
-	rm -f *.o hello
+	rm -f *.o exec

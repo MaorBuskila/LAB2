@@ -1,14 +1,14 @@
 all: exec
 
-exec: addresses.o
+exec: menu.o
 	@echo 'Building target: exec'
 	@echo 'Invoking: C Linker'
-	gcc -g -Wall -o hello  addresses.o
+	gcc -g -Wall -o exec  menu.o
 	@echo 'Finished building target: exec'
 	@echo ' '
 
-addresses.o: addresses.c
-	gcc -g -Wall -c -o addresses.o addresses.c
+menu.o: menu.c
+	gcc -g -Wall -c -o menu.o menu.c
 
 
 .PHONY: clean

@@ -4,7 +4,6 @@
 #include <stdio.h>
 int main(int argc, char **argv) {
     int iarray[3];
-    int iarray2[3];
     float farray[3];
     double darray[3];
     char carray[3];
@@ -12,8 +11,6 @@ int main(int argc, char **argv) {
 
     printf("- &iarray: %p\n",&iarray);
     printf("- &iarray + 1: %p\n",&iarray+1);
-    long dist1 = &iarray+1 - &iarray ;
-    printf("- &iarray+1 - &iarray: %p\n" ,dist1);
 
     printf("- &farray: %p\n",&farray);
     printf("- &farray + 1: %p\n",&farray+1);

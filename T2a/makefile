@@ -1,14 +1,14 @@
 all: exec
 
-exec: addresses.o
+exec: t2a.o
 	@echo 'Building target: exec'
 	@echo 'Invoking: C Linker'
-	gcc -g -Wall -o hello  addresses.o
+	gcc -g -Wall -o exec  t2a.o
 	@echo 'Finished building target: exec'
 	@echo ' '
 
-addresses.o: addresses.c
-	gcc -g -Wall -c -o addresses.o addresses.c
+t2a.o: t2a.c
+	gcc -g -Wall -c -o t2a.o t2a.c
 
 
 .PHONY: clean
